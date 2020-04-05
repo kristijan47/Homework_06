@@ -67,7 +67,7 @@ namespace Homework_06_Part2
 
         public bool passed()
         {
-            if ((int)StudentGrades !=5)
+            if ((int)StudentGrades >=6)
             {
                 return true;
             }
@@ -84,34 +84,25 @@ namespace Homework_06_Part2
 
     public class Project
     {
-        public Project(bool courseOne, bool courseTwo, bool courseThree, bool courseFour)
+        public Project(bool firstCoursePartOne, bool firstCoursePartTwo, bool secondCoursePartOne, bool secondCoursePartTwo)
         {
-            CourseOne = courseOne;
-            CourseTwo = courseTwo;
-            CourseThree = courseThree;
-            CourseFour = courseFour;
+            CourseOnePartOne = firstCoursePartOne;
+            CourseOnePartTwo = firstCoursePartTwo;
+            CourseTwoPartOne = secondCoursePartOne;
+            CourseTwoPartTwo = secondCoursePartTwo;    
+
         }
 
-        public Project(FirstCourse firstCoursePartOne, FirstCourse firstCoursePartTwo, SecondCourse secondCoursePartOne, SecondCourse secondCoursePartTwo)
-        {
-            this.firstCoursePartOne = firstCoursePartOne;
-            this.firstCoursePartTwo = firstCoursePartTwo;
-            this.secondCoursePartOne = secondCoursePartOne;
-            this.secondCoursePartTwo = secondCoursePartTwo;
-        }
+     
 
-        bool CourseOne;
-        bool CourseTwo;
-        bool CourseThree;
-        bool CourseFour;
-        private FirstCourse firstCoursePartOne;
-        private FirstCourse firstCoursePartTwo;
-        private SecondCourse secondCoursePartOne;
-        private SecondCourse secondCoursePartTwo;
+        bool CourseOnePartOne;
+        bool CourseOnePartTwo;
+        bool CourseTwoPartOne;
+        bool CourseTwoPartTwo;
 
         public void Passed()
         {
-            bool[] courses = { CourseOne, CourseTwo, CourseThree, CourseFour };
+            bool[] courses = { CourseOnePartOne, CourseOnePartTwo, CourseTwoPartOne, CourseTwoPartTwo};
             int totalCourses = 0;
 
             foreach (var course in courses)
@@ -121,7 +112,7 @@ namespace Homework_06_Part2
                     totalCourses++;
                 }
             }
-            if (totalCourses >=3)
+            if (totalCourses >2)
             {
                 Console.WriteLine($"The Student Has Passed The Academy Succesfully By Completing {totalCourses} number of courses!");
             }
