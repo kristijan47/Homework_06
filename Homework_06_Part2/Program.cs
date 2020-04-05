@@ -39,7 +39,7 @@ namespace Homework_06_Part2
         public string CourseName;
         public bool pass;
 
-        public bool passed()
+        public bool Passed()
         {
             if (pass)
             {
@@ -65,9 +65,10 @@ namespace Homework_06_Part2
         public string CourseName;
         public int StudentGrades;
 
-        public bool passed()
+        public bool Passed()
         {
-            if ((int)StudentGrades >=6)
+           
+            if (StudentGrades > 6)
             {
                 return true;
             }
@@ -89,11 +90,11 @@ namespace Homework_06_Part2
             CourseOnePartOne = firstCoursePartOne;
             CourseOnePartTwo = firstCoursePartTwo;
             CourseTwoPartOne = secondCoursePartOne;
-            CourseTwoPartTwo = secondCoursePartTwo;    
+            CourseTwoPartTwo = secondCoursePartTwo;
 
         }
 
-     
+
 
         bool CourseOnePartOne;
         bool CourseOnePartTwo;
@@ -102,7 +103,7 @@ namespace Homework_06_Part2
 
         public void Passed()
         {
-            bool[] courses = { CourseOnePartOne, CourseOnePartTwo, CourseTwoPartOne, CourseTwoPartTwo};
+            bool[] courses = { CourseOnePartOne, CourseOnePartTwo, CourseTwoPartOne, CourseTwoPartTwo };
             int totalCourses = 0;
 
             foreach (var course in courses)
@@ -112,7 +113,7 @@ namespace Homework_06_Part2
                     totalCourses++;
                 }
             }
-            if (totalCourses >2)
+            if (totalCourses > 2)
             {
                 Console.WriteLine($"The Student Has Passed The Academy Succesfully By Completing {totalCourses} number of courses!");
             }
@@ -121,7 +122,8 @@ namespace Homework_06_Part2
                 Console.WriteLine("The Student Didn't Complete The Required Number Of Courses To Pass The Academy.");
             }
         }
-        
+
+
     }
     class Program
     {
@@ -130,10 +132,10 @@ namespace Homework_06_Part2
             var firstCoursePartOne = new FirstCourse("HTML", true);
             var firstCoursePartTwo = new FirstCourse("CSS", true);
 
-            var secondCoursePartOne = new SecondCourse("JavaScript", 10) ;
-            var secondCoursePartTwo = new SecondCourse("AdvancedJavaScript", 10);
+            var secondCoursePartOne = new SecondCourse("JavaScript", 8);
+            var secondCoursePartTwo = new SecondCourse("AdvancedJavaScript",7);
 
-            Project PassOrFail = new Project(firstCoursePartOne.passed(), firstCoursePartTwo.passed(), secondCoursePartOne.passed(), secondCoursePartTwo.passed());
+            Project PassOrFail = new Project(firstCoursePartOne.Passed(), firstCoursePartTwo.Passed(), secondCoursePartOne.Passed(), secondCoursePartTwo.Passed());
             PassOrFail.Passed();
             Console.ReadLine();
         }

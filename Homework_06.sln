@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework_06", "Homework_06\Homework_06.csproj", "{B42A55CC-3690-4543-8B0E-BF747B443130}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework_06_Part2", "Homework_06_Part2\Homework_06_Part2.csproj", "{A0649CA1-1CA0-4945-8F25-4ACB3A2593F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework_06_Part2", "Homework_06_Part2\Homework_06_Part2.csproj", "{A0649CA1-1CA0-4945-8F25-4ACB3A2593F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
