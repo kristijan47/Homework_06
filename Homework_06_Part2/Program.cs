@@ -29,7 +29,7 @@ namespace Homework_06_Part2
         public FirstCourse(string courseName, bool passed)
         {
             CourseName = courseName;
-            passed = pass;
+            pass = passed;
         }
 
         public FirstCourse()
@@ -38,6 +38,8 @@ namespace Homework_06_Part2
 
         public string CourseName;
         public bool pass;
+
+       
 
         public bool Passed()
         {
@@ -68,7 +70,7 @@ namespace Homework_06_Part2
         public bool Passed()
         {
            
-            if (StudentGrades > 6)
+            if (StudentGrades > 5)
             {
                 return true;
             }
@@ -113,7 +115,7 @@ namespace Homework_06_Part2
                     totalCourses++;
                 }
             }
-            if (totalCourses > 2)
+            if (totalCourses >= 3)
             {
                 Console.WriteLine($"The Student Has Passed The Academy Succesfully By Completing {totalCourses} number of courses!");
             }
@@ -129,11 +131,11 @@ namespace Homework_06_Part2
     {
         static void Main(string[] args)
         {
-            var firstCoursePartOne = new FirstCourse("HTML", true);
+            var firstCoursePartOne = new FirstCourse("HTML", false);
             var firstCoursePartTwo = new FirstCourse("CSS", true);
 
-            var secondCoursePartOne = new SecondCourse("JavaScript", 8);
-            var secondCoursePartTwo = new SecondCourse("AdvancedJavaScript",7);
+            var secondCoursePartOne = new SecondCourse("JavaScript", 6);
+            var secondCoursePartTwo = new SecondCourse("AdvancedJavaScript",9);
 
             Project PassOrFail = new Project(firstCoursePartOne.Passed(), firstCoursePartTwo.Passed(), secondCoursePartOne.Passed(), secondCoursePartTwo.Passed());
             PassOrFail.Passed();
